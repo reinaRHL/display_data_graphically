@@ -6,6 +6,7 @@
     <th>Weight</th>
     <th>Height</th>
     <th>Color</th>
+    <th>GPA</th>
     <th>Email</th>
     <th colspan="6"></th>
   </tr>
@@ -16,7 +17,8 @@
       <td><%= student.weight %></td>
        <td><%= student.height %></td>
         <td><%= student.color %></td>
-         <td><%= student.email %></td>
+         <td><%= student.gpa %></td>
+          <td><%= student.email %></td>
       <td><%= link_to 'Show', student_path(student) %></td>
       <td><%= link_to 'Edit', edit_student_path(studente) %></td>
       <td><%= link_to 'Destroy',student_path(student),

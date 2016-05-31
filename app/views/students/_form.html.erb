@@ -1,0 +1,51 @@
+<%= form_for @students do |f| %>
+ 
+  <% if @students.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@students.errors.count, "error") %> prohibited
+        this students from being saved:
+      </h2>
+      <ul>
+        <% @students.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </p>
+  
+  <p>
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </p>
+  
+  <p>
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </p>
+  
+  <p>
+    <%= f.label :gpa %><br>
+    <%= f.text_field :gpa %>
+  </p>
+  
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

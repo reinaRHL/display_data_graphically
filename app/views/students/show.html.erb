@@ -1,0 +1,39 @@
+<p>
+  <strong>Name:</strong>
+  <%= @students.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @students.weight %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @students.height %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @students.color %>
+</p>
+
+<p>
+  <strong>GPA:</strong>
+  <%= @students.gpa %>
+</p>
+
+ 
+<p>
+  <strong>Email:</strong>
+  <%= @students.email %>
+</p>
+ 
+<!--<h2>Comments</h2>-->
+<!--<%= render @students.comments %>-->
+ 
+<!--<h2>Add a comment:</h2>-->
+<!--<%= render 'comments/form' %>-->
+ 
+<%= link_to 'Edit', edit_student_path(@students) %> |
+<%= link_to 'Back', students_path %>
