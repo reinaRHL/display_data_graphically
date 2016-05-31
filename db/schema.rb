@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 20160523011733) do
 
   create_table "students", force: :cascade do |t|
     t.string   "name"
-    t.string   "weight"
-    t.string   "height"
+    t.float    "weight"
+    t.float    "height"
     t.string   "color"
+    t.float    "gpa"
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

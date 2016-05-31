@@ -40,12 +40,12 @@ class StudentsController < ApplicationController
         @students = Student.find(params[:id])
         @students.destroy
  
-        redirect_to studentss_path
+        redirect_to students_path
     end
  
     private
     def students_params
-      params.require(:students).permit(:name, :height, :weight, :color, :gpa, :email)
+      params.require(:student).permit(:name, :height, :weight, :color, :gpa, :email)
     end
  
  
