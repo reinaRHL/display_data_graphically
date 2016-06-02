@@ -3,37 +3,43 @@
 
 
 <style>
-  
+
+
 #fixed-size-square {
-    display:inline-block;
+    display:inline-table;
     background: white;
     border: solid;
     border-color:black;
     border-width:1px;
     vertical-align: bottom;
-    
+    font-family:sans-serif;
 }
 
-.text-box{
+#text-box{
   display: table-cell;
-  vertical-align:middle;
-  text-align:center;
-  
+  vertical-align: middle;
+  text-align: center;
 }
  
 </style>
 
-
 <div>
-  
   <% @students.each do |student| %>
      
-    <div id= "fixed-size-square" style = "width:<%= student.weight %>px; height:<%= student.height %>px">
-       <div class= "text-box" style = "width:<%= student.weight %>px; height:<%= student.height %>px"><%= student.name %></div>
+    <div id= "fixed-size-square" style = "width:<%= student.weight%>px; height:<%= student.height %>px">
+       <div id= "text-box" style = "width:<%= student.weight %> px; 
+                    height:<%= student.height %>  px;
+                    color:<%= student.color %>;">
+         <b><%= student.name %></b><br><b><%= student.gpa %></b><br><b><%= student.email %></b><br><br>
+         <%= link_to 'Show', student_path(student) %><br>
+         <%= link_to 'Edit', edit_student_path(student) %><br>
+         <%= link_to 'Destroy', student_path(student),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+                    
+        </div>
     </div>
     
-  
   <% end %>
 
-  
 </div>
