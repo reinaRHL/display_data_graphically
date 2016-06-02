@@ -1,29 +1,39 @@
 <h1>Listing Student Data</h1>
 <%= link_to 'Add student', new_student_path %>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Weight</th>
-    <th>Height</th>
-    <th>Color</th>
-    <th>GPA</th>
-    <th>Email</th>
-    <th colspan="6"></th>
-  </tr>
+
+
+<style>
+  
+#fixed-size-square {
+    display:inline-block;
+    background: white;
+    border: solid;
+    border-color:black;
+    border-width:1px;
+    vertical-align: bottom;
+    
+}
+
+.text-box{
+  display: table-cell;
+  vertical-align:middle;
+  text-align:center;
+  
+}
  
+</style>
+
+
+<div>
+  
   <% @students.each do |student| %>
-    <tr>
-      <td><%= student.name %></td>
-      <td><%= student.weight %></td>
-       <td><%= student.height %></td>
-        <td><%= student.color %></td>
-         <td><%= student.gpa %></td>
-          <td><%= student.email %></td>
-      <td><%= link_to 'Show', student_path(student) %></td>
-      <td><%= link_to 'Edit', edit_student_path(student) %></td>
-      <td><%= link_to 'Destroy',student_path(student),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+     
+    <div id= "fixed-size-square" style = "width:<%= student.weight %>px; height:<%= student.height %>px">
+       <div class= "text-box" style = "width:<%= student.weight %>px; height:<%= student.height %>px"><%= student.name %></div>
+    </div>
+    
+  
   <% end %>
-</table>
+
+  
+</div>
