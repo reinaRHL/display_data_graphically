@@ -1,8 +1,18 @@
 class StudentsController < ApplicationController
     
-    def index
-        @students = Student.all
-    end
+    
+    
+    helper_method :sort_column, :sort_direction
+  def index
+    @students = Student.order(sort_column + ' ' + sort_direction)
+  end
+  
+  
+  
+  def sort_direction
+    params[:direction] || "asc"
+  end
+    
  
     def show
         @students = Student.find(params[:id])
@@ -48,5 +58,9 @@ class StudentsController < ApplicationController
       params.require(:student).permit(:name, :height, :weight, :color, :gpa, :email)
     end
  
+ private
+  def sort_column
+    params[:sort] || "name"
+  end
  
 end
