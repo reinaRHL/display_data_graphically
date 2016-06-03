@@ -1,6 +1,4 @@
-Added features: 
-
-UI
+Added feature: 
 
 Sorting:
     

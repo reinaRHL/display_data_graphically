@@ -1,14 +1,27 @@
-<h1>Listing Student Data</h1>
-<%= link_to 'Add student', new_student_path %>
+
+
+<h1 style= "text-align:center; color:gray">Student Information</h1>
+<h3 style= "text-align:center"><%= link_to 'Add New Student!', new_student_path %></h3>
+
+<body>
+<hr>
+<h4 style= "text-align:center">
+<span>Sort by: </span>
 <%= sortable "Name" %>
 <%= sortable "Height" %>
 <%= sortable "Weight" %>
 <%= sortable "GPA" %>
-<%= sortable "email" %>
+<%= sortable "email" %></h4>
+
+<hr style="color:light-gray">
+</body>
 
 
 <style>
 
+body{
+  font-family:sans-serif;
+}
 
 #fixed-size-square {
     display:inline-table;
@@ -17,7 +30,7 @@
     border-color:black;
     border-width:1px;
     vertical-align: bottom;
-    font-family:sans-serif;
+   
 }
 
 #text-box{
@@ -36,7 +49,7 @@
                     height:<%= student.height %>  px;
                     color:<%= student.color %>;">
          <b><%= student.name %></b><br><b><%= student.gpa %></b><br><b><%= student.email %></b><br><br>
-         <%= link_to 'Show', student_path(student) %><br>
+         <%= link_to image_tag("public/a.jpg", alt:"show"), student_path(student) %><br>
          <%= link_to 'Edit', edit_student_path(student) %><br>
          <%= link_to 'Destroy', student_path(student),
               method: :delete,
