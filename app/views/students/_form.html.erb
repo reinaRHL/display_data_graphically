@@ -6,7 +6,7 @@
         <%= pluralize(@students.errors.count, "error") %> prohibited
         this students from being saved:
       </h2>
-      <ul>
+      <ul  style= "list-style-position: inside;" >
         <% @students.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
@@ -50,8 +50,9 @@
  
 <% end %>
 
+
 <style>
-p{
+body{
   text-align:center;
 }
   
