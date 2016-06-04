@@ -8,11 +8,6 @@ class StudentsController < ApplicationController
   end
   
   
-  
-  def sort_direction
-    params[:direction] || "asc"
-  end
-    
  
     def show
         @students = Student.find(params[:id])
@@ -62,5 +57,10 @@ class StudentsController < ApplicationController
   def sort_column
     params[:sort] || "name"
   end
+  
+  def sort_direction
+    params[:direction] || "asc"
+  end
+    
  
 end
