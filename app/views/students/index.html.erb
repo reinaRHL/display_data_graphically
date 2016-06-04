@@ -1,19 +1,19 @@
 
 
 <h1 style= "text-align:center; color:gray">Student Information</h1>
-<h3 style= "text-align:center"><%= link_to 'Add New Student!', new_student_path %></h3>
+<h3 style= "text-align:center;"><%= link_to 'Add New Student!', new_student_path %></h3>
 
 <body>
-<hr>
+<hr style="color:light-gray; height: 10px; border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;">
 <h4 style= "text-align:center">
 <span>Sort by: </span>
-<%= sortable "Name" %>
-<%= sortable "Height" %>
-<%= sortable "Weight" %>
-<%= sortable "GPA" %>
+<%= sortable "Name " %>
+<%= sortable "Height " %>
+<%= sortable "Weight " %>
+<%= sortable "GPA " %>
 <%= sortable "email" %></h4>
 
-<hr style="color:light-gray">
+<hr style="color:light-gray; height: 10px; border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;">
 </body>
 
 
@@ -21,6 +21,7 @@
 
 body{
   font-family:sans-serif;
+  
 }
 
 #fixed-size-square {
@@ -49,11 +50,17 @@ body{
                     height:<%= student.height %>  px;
                     color:<%= student.color %>;">
          <b><%= student.name %></b><br><b><%= student.gpa %></b><br><b><%= student.email %></b><br><br>
-         <%= link_to image_tag("public/a.jpg", alt:"show"), student_path(student) %><br>
-         <%= link_to 'Edit', edit_student_path(student) %><br>
-         <%= link_to 'Destroy', student_path(student),
+         
+        
+        <div style= "vertical-align:bottom" >
+            <%= link_to image_tag("show.png", :title => "Show"), student_path(student) %>
+            <%= link_to image_tag("edit.png", :title => "Edit"), edit_student_path(student) %>
+            <%= link_to image_tag("delete.png", :title => "Delete"), student_path(student),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
+          
+        </div>
+       
                     
         </div>
     </div>

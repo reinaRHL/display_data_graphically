@@ -1,3 +1,9 @@
+
+
+
+<body>
+<h1 style= "color:gray">Detail Information</h1>
+<hr>
 <p>
   <strong>Name:</strong>
   <%= @students.name %>
@@ -30,5 +36,16 @@
 </p>
  
 
-<%= link_to 'Edit', edit_student_path(@students) %> |
-<%= link_to 'Back', students_path %>
+
+<%= link_to image_tag("back.png", :title => "Back"), students_path %> |
+<%= link_to image_tag("edit.png", :title => "Edit"), edit_student_path(@students) %>
+</body>
+  
+<style>
+
+body{
+  font-family:sans-serif;
+  text-align:center;
+}
+
+</style>
