@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
     
     
     
-    helper_method :sort_column, :sort_direction
+  helper_method :sort_column, :sort_direction
   def index
     @students = Student.order(sort_column + ' ' + sort_direction)
   end
@@ -64,3 +64,4 @@ class StudentsController < ApplicationController
     
  
 end
+
